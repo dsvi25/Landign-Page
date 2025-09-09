@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Conexão Teen Novelas</title>
+<style>
+  *{margin:0;padding:0;box-sizing:border-box;scroll-behavior:smooth;}
+  body{font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;background:linear-gradient(120deg,#1e3c72,#2a5298,#a155b9);color:white;text-align:center;min-height:100vh;display:flex;flex-direction:column;transition:background 0.5s,color 0.5s;}
+  header{display:flex;justify-content:space-between;align-items:center;padding:20px 40px;background-color:rgba(30,60,114,0.9);box-shadow:0 4px 10px rgba(0,0,0,0.2);width:100%;}
+  .logo-header{display:flex;align-items:center;gap:15px;}
+  .logo-text{display:flex;flex-direction:column;align-items:flex-start;}
+  .logo-text span:first-child{font-size:2.1rem;font-weight:bold;color:#ffccff;}
+  .logo-text span:last-child{font-size:1.3rem;font-style:italic;font-weight:bold;color:#ffe6ff;text-shadow:1px 1px 2px rgba(0,0,0,0.4);}
+  .social-icons{display:flex;align-items:center;gap:10px;margin-left:15px;}
+  .social-icons img:hover{transform:scale(1.2);}
+  nav{display:flex;gap:25px;align-items:center;flex-wrap:wrap;justify-content:center;margin:30px 0;}
+  nav a{color:#fff;text-decoration:none;padding:8px 16px;border-radius:5px;transition:background 0.3s,color 0.3s;cursor:pointer;}
+  nav a:hover{background:rgba(255,255,255,0.2);}
+  .dropdown{position:relative;display:inline-block;}
+  .dropdown-content{display:none;position:absolute;background-color:#2a5298;min-width:180px;box-shadow:0px 8px 16px rgba(0,0,0,0.2);z-index:1001;top:40px;border-radius:6px;left:0;}
+  .dropdown-content a{color:white;padding:10px;text-decoration:none;display:block;text-align:left;}
+  .dropdown:hover .dropdown-content{display:block;}
+  .watch-button{background-color:#ff4081;color:white;border:none;padding:15px 40px;font-size:1.3rem;font-weight:bold;border-radius:30px;margin:30px auto;cursor:pointer;transition:background 0.3s ease,transform 0.3s ease;display:block;box-shadow:0 8px 20px rgba(255,64,129,0.4);}
+  .watch-button:hover{background-color:#e91e63;transform:scale(1.05);}
+  footer{margin-top:auto;padding:20px;background-color:rgba(0,0,0,0.2);font-size:0.9rem;color:#ddd;}
+  .carousel-container{position:relative;max-width:900px;margin:40px auto 0 auto;overflow:hidden;border-radius:16px;min-height:400px;box-shadow:0 4px 16px rgba(0,0,0,0.2);background:rgba(42,82,152,0.2);}
+  .carousel{display:flex;transition:transform 0.5s ease;}
+  .carousel img{width:400px;height:220px;object-fit:cover;border-radius:16px;flex-shrink:0;}
+  .carousel-btn{position:absolute;top:50%;transform:translateY(-50%);background:rgba(30,60,114,0.7);color:#fff;border:none;font-size:2rem;padding:8px 16px;cursor:pointer;border-radius:50%;z-index:2;transition:background 0.3s;}
+  .carousel-btn:hover{background:#ff4081;}
+  .carousel-btn.prev{left:10px;}
+  .carousel-btn.next{right:10px;}
+  section{padding:40px; background:rgba(42,82,152,0.3); margin:20px auto; width:90%; border-radius:10px; text-align:left;}
+  section h2{color:#fff;margin-bottom:15px;}
+  section ul{list-style:disc; padding-left:20px;}
+  section ul li{margin-bottom:10px;}
+  #sobre-section{display:none;}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="logo-header">
+    <img src="img/conexxx-icon.png" alt="Conexão Teen Novelas" style="height:180px;">
+    <div class="logo-text">
+      <span><i>“É aqui que eu quero estar”</i></span>
+    </div>
+  </div>
+  <div class="social-icons">
+    <a href="#"><img src="img/facebook-icon.png" alt="Facebook" width="40"></a>
+    <a href="https://t.me/conexao123teennovelas" target="_blank"><img src="img/telegram-icon.png" alt="Telegram" width="40"></a>
+    <a href="https://www.instagram.com/conexaoteennovelas" target="_blank"><img src="img/instagram-icon.png" alt="Instagram" width="40"></a>
+    <a href="https://www.youtube.com/channel/UCdm13Ql_YOmHH8EE6GEqxHg" target="_blank"><img src="img/youtube-icon.png" alt="YouTube" width="40"></a>
+  </div>
+</header>
+
+<nav>
+  <a href="#">Início</a>
+  <div class="dropdown">
+    <a href="#">Resumos Semanais</a>
+    <div class="dropdown-content">
+      <a href="#resumo-filhas-garcia">As Filhas da Senhora Garcia</a>
+      <a href="#resumo-dona-de-mim">Dona de Mim</a>
+      <a href="#resumo-vale-tudo">Vale Tudo</a>
+    </div>
+  </div>
+  <a href="#">Notícias</a>
+  <a href="#">Venda de Produtos</a>
+  <a href="#">Contato</a>
+  <a href="#" id="sobre-link">Sobre</a>
+</nav>
+
+<button class="watch-button">ASSISTIR AGORA</button>
+
+<!-- Carrossel -->
+<div class="carousel-container">
+  <div class="carousel">
+    <img src="img/novela1.jpg" alt="Novela 1">
+    <img src="img/novela2.jpg" alt="Novela 2">
+    <img src="img/novela3.jpg" alt="Novela 3">
+  </div>
+  <button class="carousel-btn prev">&#10094;</button>
+  <button class="carousel-btn next">&#10095;</button>
+</div>
+
+<!-- Resumos Semanais -->
+<section id="resumo-filhas-garcia">
+  <h2>As Filhas da Senhora Garcia – Resumo Semanal</h2>
+  <ul>
+    <li>Paula faz Mar pagar com o cartão de Luís; Pedro percebe que Nicolás não está bem; Valéria tenta descobrir quem é o filho de Rocío.</li>
+    <li>A armadilha de Paula joga Luis para fora de casa; Valéria e Arturo brindam ao novo lar; Nicolás visita o túmulo da mãe.</li>
+  </ul>
+</section>
+
+<section id="resumo-dona-de-mim">
+  <h2>Dona de Mim – Resumo Semanal</h2>
+  <ul>
+    <li>Marlon tenta convencer Kami a esquecer Bárbara; Ryan e Bárbara se beijam; Nina se insinua para Danilo.</li>
+    <li>Jaques convida Isabela para morar na mansão; Rosa e Samuel conversam sobre Sofia.</li>
+  </ul>
+</section>
+
+<section id="resumo-nova-novela">
+  <h2>Nova Novela – Resumo Semanal</h2>
+  <ul>
+    <li>Resumo do capítulo 1...</li>
+    <li>Resumo do capítulo 2...</li>
+  </ul>
+</section>
+
+<!-- Sobre que aparece ao clicar -->
+<section id="sobre-section">
+  <h2>Sobre o Conexão Teen Novelas</h2>
+  <p>Bem-vindo ao Conexão Teen Novelas! Aqui você encontra resumos semanais, notícias, informações sobre suas novelas favoritas e muito mais.</p>
+  <p>Nosso objetivo é manter os fãs sempre atualizados de forma rápida, divertida e interativa. Aproveite para explorar nossas seções, carrossel de novidades e redes sociais.</p>
+</section>
+
+<footer>
+  &copy; 2025 Conexão Teen Novelas. Todos os direitos reservados.
+</footer>
+
+<script>
+// Toggle "Sobre"
+const linkSobre = document.getElementById('sobre-link');
+const sobreSection = document.getElementById('sobre-section');
+
+linkSobre.addEventListener('click', (e)=>{
+  e.preventDefault();
+  if(sobreSection.style.display === 'none' || sobreSection.style.display === ''){
+    sobreSection.style.display = 'block';
+    sobreSection.scrollIntoView({behavior:'smooth'});
+  } else {
+    sobreSection.style.display = 'none';
+  }
+});
+</script>
+
+</body>
+</html>
